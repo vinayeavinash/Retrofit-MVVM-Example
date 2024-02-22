@@ -1,4 +1,4 @@
-package com.vinayeapps.retrofit.data
+package com.vinayeapps.retrofit.network
 
 import com.vinayeapps.retrofit.data.model.Products
 import retrofit2.http.GET
