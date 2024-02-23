@@ -16,7 +16,7 @@ import kotlinx.coroutines.launch
 
 
 /**
- * Created by vinaye on 2024-02-21.
+ * Created by vinay on 2024-02-21.
  * Author: Vinay Sebastian
  */
 class ProductViewModel(private val productRepository: ProductRepository) : ViewModel() {
@@ -32,16 +32,15 @@ class ProductViewModel(private val productRepository: ProductRepository) : ViewM
         viewModelScope.launch {
             productRepository.getProductList().collectLatest { result ->
 
-                when(result){
-                    is Result.Error ->
-                    {
+                when (result) {
+                    is Result.Error -> {
                         _showToastChannel.send(true)
                     }
+
                     is Result.Success -> {
 
-                        result.data?.let {
-                            products ->
-                            _products.update {products  }
+                        result.data?.let { products ->
+                            _products.update { products }
                         }
                     }
                 }
