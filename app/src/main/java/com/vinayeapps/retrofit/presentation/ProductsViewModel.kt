@@ -7,7 +7,6 @@ import com.vinayeapps.retrofit.data.Result
 import com.vinayeapps.retrofit.data.model.Product
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.receiveAsFlow
@@ -19,7 +18,7 @@ import kotlinx.coroutines.launch
  * Created by vinay on 2024-02-21.
  * Author: Vinay Sebastian
  */
-class ProductViewModel(private val productRepository: ProductRepository) : ViewModel() {
+class ProductsViewModel(private val productRepository: ProductRepository) : ViewModel() {
 
     private val _products = MutableStateFlow<List<Product>>(emptyList())
     val products = _products.asStateFlow()

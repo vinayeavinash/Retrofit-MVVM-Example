@@ -10,6 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory
  * Created by vinay on 2024-02-21.
  * Author: Vinay Sebastian
  */
+
 object RetrofitInstance {
     private val interceptor: HttpLoggingInterceptor =
         HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BODY }
@@ -18,7 +19,7 @@ object RetrofitInstance {
         .addInterceptor(interceptor).build()
 
     val api:Api = Retrofit.Builder().
-            addConverterFactory(GsonConverterFactory.create())
+    addConverterFactory(GsonConverterFactory.create())
         .baseUrl(Api.BASE_URL)
         .client(client)
         .build()
